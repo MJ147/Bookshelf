@@ -6,6 +6,8 @@ import java.io.IOException;
 
 public class SimpleBlogApp extends NanoHTTPD {
 
+    RequestUrlMapper requestUrlMapper = new RequestUrlMapper();
+
     public SimpleBlogApp(int port) throws IOException {
         super(port);
         start(5000, false);
@@ -18,6 +20,10 @@ public class SimpleBlogApp extends NanoHTTPD {
         } catch (IOException e) {
             System.err.println("Server can't started becouse of error: \n" + e);
         }
+    }
 
+    @Override
+    public Response serve(IHTTPSession session) {
+        return requestUrlMapper.delegateRequest(session);
     }
 }
