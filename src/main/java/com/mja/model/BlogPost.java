@@ -7,11 +7,7 @@ public class BlogPost {
     private String title;
     private String author;
     private String content;
-    private LocalDate dateOfPosted;
-
-    public BlogPost() {
-        this.dateOfPosted = LocalDate.now();
-    }
+    private String dateOfPosted;
 
     public Long getId() {
         return id;
@@ -45,8 +41,11 @@ public class BlogPost {
         this.content = content;
     }
 
-    public LocalDate getDateOfPosted() {
+    public String getDateOfPosted() {
         return dateOfPosted;
     }
 
+    public void setDateOfPosted(String dateOfPosted) {
+        this.dateOfPosted = dateOfPosted;
+    }
 }
