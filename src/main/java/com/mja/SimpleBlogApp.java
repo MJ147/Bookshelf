@@ -18,7 +18,7 @@ public class SimpleBlogApp extends NanoHTTPD {
         try {
             new SimpleBlogApp(8080);
         } catch (IOException e) {
-            System.err.println("Server can't started becouse of error: \n" + e);
+            System.err.println("Server can't started because of error: \n" + e);
         }
     }
 
